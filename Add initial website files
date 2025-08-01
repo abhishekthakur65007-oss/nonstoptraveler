@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NoStopTraveller - Tours Across Himachal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f7f8;
+      color: #333;
+    }
+    header {
+      background-color: #2a9df4;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #2a9df4;
+      border-bottom: 2px solid #2a9df4;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      background: white;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe57;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: #ddd;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NoStopTraveller</h1>
+  <p>Tours Across Himachal Pradesh</p>
+</header>
+
+<section>
+  <h2>About Us</h2>
+  <p>NoStopTraveller is a reliable travel agency based in Shimla, specializing in customized tour packages across the beautiful Himachal Pradesh region. We offer hassle-free travel with professional drivers, local guides, and affordable prices to make your trip memorable — whether it’s sightseeing, adventure tours, or family vacations.</p>
+</section>
+
+<section>
+  <h2>Our Services</h2>
+  <ul>
+    <li>Shimla-Manali Tour Packages</li>
+    <li>Spiti Valley Jeep Safari</li>
+    <li>Couple/Family Group Tours</li>
+    <li>Pickup & Drop (Chandigarh, Delhi)</li>
+    <li>Hotel Booking Assistance</li>
+    <li>Snow Point & Adventure Travel</li>
+  </ul>
+</section>
+
+<section class="contact-info">
+  <h2>Contact Us</h2>
+  <p>📱 Mobile: 8219575426</p>
+  <p>📧 Email: <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a></p>
+  <p>📍 Office: Above Shimla Pet Care, Kanlog, Shimla, Himachal Pradesh</p>
+  <a
+    href="https://wa.me/918219575426"
+    class="whatsapp-button"
+    target="_blank"
+    rel="noopener"
+    >Chat on WhatsApp</a
+  >
+</section>
+
+<footer>
+  &copy; 2025 NoStopTraveller. All rights reserved.
+</footer>
+
+</body>
+</html>
