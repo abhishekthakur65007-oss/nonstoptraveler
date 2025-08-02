@@ -1,12 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoStopTraveller</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoStopTraveller</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: #0e3c61;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?mountains,travel') no-repeat center center;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #0e3c61;
+      margin-bottom: 20px;
+    }
+    .destinations ul, .packages ul {
+      list-style: none;
+      padding: 0;
+    }
+    .destinations li, .packages li {
+      background: white;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .gallery img {
+      width: 32%;
+      margin: 1%;
+      border-radius: 8px;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    form button {
+      background: #0e3c61;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #0e3c61;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to NoStopTraveller</h1>
-    <p>Your gateway to explore Himachal and beyond.</p>
+
+<header>
+  <h1>NoStopTraveller</h1>
+  <nav>
+    <a href="#destinations">Destinations</a>
+    <a href="#packages">Packages</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  Explore Himachal Like Never Before
+</div>
+
+<section id="destinations" class="destinations">
+  <h2>Popular Destinations</h2>
+  <ul>
+    <li>Shimla – Queen of Hills</li>
+    <li>Manali – Adventure Paradise</li>
+    <li>Spiti Valley – The Cold Desert</li>
+    <li>Dharamshala – Mini Tibet</li>
+  </ul>
+</section>
+
+<section id="packages" class="packages">
+  <h2>Tour Packages</h2>
+  <ul>
+    <li>3 Days Shimla Getaway – ₹4,999</li>
+    <li>5 Days Manali Adventure – ₹7,999</li>
+    <li>7 Days Spiti Expedition – ₹14,999</li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>About NoStopTraveller</h2>
+  <p>We are passionate travelers helping you explore the untouched beauty of Himachal Pradesh with curated packages and expert guidance. Whether you're an adventurer, a peace-seeker, or a family traveler — we've got something for everyone.</p>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2>Gallery</h2>
+  <img src="https://source.unsplash.com/400x300/?mountains" alt="Himachal 1" />
+  <img src="https://source.unsplash.com/400x300/?travel" alt="Himachal 2" />
+  <img src="https://source.unsplash.com/400x300/?nature,india" alt="Himachal 3" />
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Your Message" rows="5"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 NoStopTraveller. Follow us on 
+    <a href="#" style="color: #fff; text-decoration: underline;">Instagram</a> |
+    <a href="#" style="color: #fff; text-decoration: underline;">YouTube</a>
+  </p>
+</footer>
+
 </body>
 </html>
