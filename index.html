@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NoStop Traveller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nonstop Traveller</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #fff;
+      color: #333;
     }
     header {
-      background: #0e3c61;
+      background-color: #2a7ae2;
       color: white;
       padding: 20px;
       text-align: center;
@@ -23,139 +23,100 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .hero {
-      background: url('https://source.unsplash.com/1600x600/?himachal,travel') no-repeat center center;
-      background-size: cover;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px #000;
+    nav a:hover {
+      text-decoration: underline;
     }
     section {
       padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
     }
     h2 {
-      color: #0e3c61;
-      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
     }
-    .destinations ul, .packages ul {
-      list-style: none;
-      padding: 0;
+    /* Packages cards */
+    .packages-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
-    .destinations li, .packages li {
-      background: white;
-      margin-bottom: 10px;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .gallery img {
-      width: 32%;
-      margin: 1%;
+    .package-card {
+      border: 1px solid #ddd;
       border-radius: 8px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 2px 2px 8px #ccc;
+      background-color: #fafafa;
     }
-    form input, form textarea, form button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-    }
-    form button {
-      background: #0e3c61;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .package-card h3 {
+      color: #2a7ae2;
+      margin-top: 0;
     }
     footer {
-      background: #0e3c61;
+      background-color: #2a7ae2;
       color: white;
       text-align: center;
       padding: 15px;
       margin-top: 40px;
     }
-    footer a {
-      color: white;
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>NoStop Traveller</h1>
-  <nav>
-    <a href="#destinations">Destinations</a>
-    <a href="#packages">Packages</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <h1>Nonstop Traveller</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<div class="hero">
-  Your Gateway to Hidden Himachal
-</div>
+  <section id="about" style="background-color: #f9f9f9;">
+    <h2>About Us</h2>
+    <p style="max-width: 700px; margin: 0 auto; font-size: 18px; line-height: 1.6; color: #555;">
+      Welcome to Nonstop Traveller! We specialize in offering amazing travel experiences to beautiful destinations like Shimla and Manali.  
+      Enjoy comfortable pickup and drop services from Chandigarh with carefully planned tour packages to make your journey memorable and hassle-free.
+    </p>
+  </section>
 
-<section id="destinations" class="destinations">
-  <h2>Top Destinations</h2>
-  <ul>
-    <li>Shimla</li>
-    <li>Manali</li>
-    <li>Kinnaur</li>
-    <li>Spiti</li>
-    <li>Chandratal</li>
-    <li>Chamba</li>
-    <li>Dharamshala</li>
-    <li>Local Treks & City Tours</li>
-  </ul>
-</section>
+  <section id="packages">
+    <h2>Our Tour Packages</h2>
+    <div class="packages-container">
+      <div class="package-card">
+        <h3>Shimla Trip</h3>
+        <p>5 days / 4 nights package including hotel stay, sightseeing, and Chandigarh pickup & drop.</p>
+        <p><strong>Price:</strong> ₹15,000 per person</p>
+      </div>
+      <div class="package-card">
+        <h3>Manali Adventure</h3>
+        <p>6 days / 5 nights package with adventure activities, hotel stay, and Chandigarh pickup & drop.</p>
+        <p><strong>Price:</strong> ₹18,000 per person</p>
+      </div>
+      <div class="package-card">
+        <h3>Shimla + Manali Combo</h3>
+        <p>10 days / 9 nights complete tour package covering Shimla and Manali with all-inclusive services.</p>
+        <p><strong>Price:</strong> ₹30,000 per person</p>
+      </div>
+    </div>
+  </section>
 
-<section id="packages" class="packages">
-  <h2>Tour Package</h2>
-  <ul>
-    <li><strong>Himachal Explorer – ₹15,000 / person</strong><br>
-    Includes: Hotel stay, cab service, city sightseeing, optional local treks</li>
-  </ul>
-</section>
+  <section id="contact" style="background-color: #f9f9f9; padding-bottom: 50px;">
+    <h2>Contact Us</h2>
+    <p style="max-width: 700px; margin: 0 auto; font-size: 18px; line-height: 1.6; color: #555; text-align:center;">
+      Call/WhatsApp: <strong>8219575426</strong><br/>
+      Email: <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a><br/>
+      Instagram: <a href="https://instagram.com/nonstoptraveler" target="_blank">@nonstoptraveler</a><br/>
+      Address: A Phadi Path, Chandigarh
+    </p>
+  </section>
 
-<section id="about">
-  <h2>About NoStop Traveller</h2>
-  <p>
-    At <strong>NoStop Traveller</strong>, we specialize in personalized Himachal travel experiences. From the serene valleys of Spiti to the vibrant energy of Manali, our packages are designed to give you a true taste of mountain life. Whether you're looking for adventure, peace, or a local cultural experience — we’re here to make your trip seamless, memorable, and affordable.<br><br>
-    Join us for breathtaking views, warm hospitality, and unforgettable journeys through the heart of Himachal.
-  </p>
-</section>
-
-<section id="gallery" class="gallery">
-  <h2>Gallery</h2>
-  <img src="https://source.unsplash.com/400x300/?himachal" alt="Himachal 1" />
-  <img src="https://source.unsplash.com/400x300/?mountains,travel" alt="Himachal 2" />
-  <img src="https://source.unsplash.com/400x300/?india,nature" alt="Himachal 3" />
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Email:</strong> abhishekthakur65007@gmail.com</p>
-  <p><strong>Phone / WhatsApp:</strong> 8219575426</p>
-  <p><strong>Location:</strong> Shimla, Himachal Pradesh</p>
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer>
-  <p>&copy; 2025 NoStop Traveller | Follow us on 
-    <a href="https://instagram.com/nonstoptraveler7" target="_blank">Instagram</a>
-  </p>
-</footer>
+  <footer>
+    <p>© 2025 Nonstop Traveller. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
