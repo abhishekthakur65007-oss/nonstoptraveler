@@ -225,6 +225,40 @@
     </div>
   </section>
 </main>
+  <section id="booking" style="max-width: 600px; margin: 50px auto; padding: 0 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <h2 style="text-align: center; color: #2c3e50; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px;">Book Your Trip</h2>
+
+  <form action="https://formsubmit.co/abhishekthakur65007@gmail.com" method="POST" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.12);">
+
+    <!-- To prevent spam -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="name" style="display:block; margin-bottom: 8px; font-weight: 600; color: #34495e;">Full Name *</label>
+    <input type="text" id="name" name="name" required style="width:100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+
+    <label for="email" style="display:block; margin-bottom: 8px; font-weight: 600; color: #34495e;">Email *</label>
+    <input type="email" id="email" name="email" required style="width:100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+
+    <label for="phone" style="display:block; margin-bottom: 8px; font-weight: 600; color: #34495e;">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required style="width:100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+
+    <label for="package" style="display:block; margin-bottom: 8px; font-weight: 600; color: #34495e;">Select Package *</label>
+    <select id="package" name="package" required style="width:100%; padding: 10px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+      <option value="" disabled selected>Choose your package</option>
+      <option value="Shimla - Manali Package">Shimla - Manali Package (₹16,000)</option>
+      <option value="Lahaul - Spiti Package">Lahaul - Spiti Package (₹24,000)</option>
+    </select>
+
+    <label for="message" style="display:block; margin-bottom: 8px; font-weight: 600; color: #34495e;">Additional Details / Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="Any specific requirements?" style="width:100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;"></textarea>
+
+    <button type="submit" style="background: #e67e22; color: white; padding: 14px 30px; border: none; border-radius: 30px; font-size: 1.2rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5); transition: background 0.3s ease;">
+      Submit Booking
+    </button>
+
+  </form>
+</section>
+
 
 <footer>
   <p>Contact us: <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a> | Call/WhatsApp: 8219575426</p>
