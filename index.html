@@ -15,7 +15,7 @@
       background: #f5f7fa;
       color: #34495e;
       line-height: 1.6;
-      scroll-behavior: smooth; /* smooth scroll */
+      scroll-behavior: smooth;
     }
 
     a {
@@ -136,6 +136,7 @@
       box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
       transition: background 0.3s ease, transform 0.2s ease;
       cursor: pointer;
+      user-select: none;
     }
 
     .btn-book:hover {
@@ -271,7 +272,7 @@
         <p class="price">₹16,000 per person</p>
         <p>Pickup & Drop from Chandigarh Airport / Railway Station / Bus Stand</p>
         <p>Explore Shimla and Manali with comfortable stays and guided tours.</p>
-        <a href="#booking" class="btn-book">Book Now</a>
+        <a href="#booking" class="btn-book" data-package="Shimla - Manali Package">Book Now</a>
       </div>
     </div>
     
@@ -283,7 +284,7 @@
         <p class="price">₹24,000 per person</p>
         <p>Pickup & Drop from Chandigarh Airport / Railway Station / Bus Stand</p>
         <p>Experience the breathtaking landscapes and culture of Lahaul and Spiti valley.</p>
-        <a href="#booking" class="btn-book">Book Now</a>
+        <a href="#booking" class="btn-book" data-package="Lahaul - Spiti Package">Book Now</a>
       </div>
     </div>
   </section>
@@ -323,6 +324,40 @@
   <p>Contact us: <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a> | Call/WhatsApp: 8219575426</p>
   <p>&copy; 2025 NonStopTraveller. All rights reserved.</p>
 </footer>
+
+<script>
+  // Wait until DOM is loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    // Select all Book Now buttons
+    const buttons = document.querySelectorAll('.btn-book');
+    const packageSelect = document.getElementById('package');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault(); // prevent default anchor jump
+
+        // Get the package name from data-package attribute
+        const selectedPackage = this.getAttribute('data-package');
+        
+        // Set the select value
+        if (packageSelect && selectedPackage) {
+          packageSelect.value = selectedPackage;
+        }
+        
+        // Scroll to booking form smoothly
+        const bookingSection = document.getElementById('booking');
+        if (bookingSection) {
+          bookingSection.scrollIntoView({ behavior: 'smooth' });
+          // Focus on name input field for better UX
+          const nameInput = bookingSection.querySelector('input[name="name"]');
+          if (nameInput) {
+            nameInput.focus();
+          }
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
