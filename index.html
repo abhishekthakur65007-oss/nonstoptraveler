@@ -12,9 +12,9 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-text">
-      <h1>Discover Himachal</h1>
-      <h3>Snow peaks • Pine forests • Colonial charm</h3>
-      <p>Your journey starts here. Explore the magic of Himachal Pradesh with us.</p>
+      <h1 id="hero-title">Discover Himachal</h1>
+      <h3 id="hero-subtitle">Snow peaks • Pine forests • Colonial charm</h3>
+      <p id="hero-desc">Your journey starts here. Explore the magic of Himachal Pradesh with us.</p>
       <a href="packages.html" class="btn">Explore Packages</a>
     </div>
   </section>
@@ -43,5 +43,51 @@
     <p>&copy; 2025 NoStopTraveller | Designed with ❤️ in Himachal</p>
   </footer>
 
+  <!-- Slideshow Script -->
+  <script>
+    const slides = [
+      {
+        image: "shimla.jpg",
+        title: "Shimla",
+        subtitle: "Colonial charm • Mall Road • Pine forests",
+        desc: "Walk the streets of the Queen of Hills and experience heritage mixed with nature."
+      },
+      {
+        image: "manali.jpg",
+        title: "Manali",
+        subtitle: "Snow peaks • Solang Valley • Beas River",
+        desc: "Adventure and peace in the lap of the Himalayas."
+      },
+      {
+        image: "spiti.jpg",
+        title: "Spiti Valley",
+        subtitle: "Cold desert • Monasteries • High passes",
+        desc: "A journey to the land of lamas, rugged terrains, and starlit skies."
+      }
+    ];
+
+    let currentSlide = 0;
+    const hero = document.querySelector(".hero");
+    const heroTitle = document.getElementById("hero-title");
+    const heroSubtitle = document.getElementById("hero-subtitle");
+    const heroDesc = document.getElementById("hero-desc");
+
+    function showSlide(index) {
+      const slide = slides[index];
+      hero.style.backgroundImage = `url(${slide.image})`;
+      heroTitle.textContent = slide.title;
+      heroSubtitle.textContent = slide.subtitle;
+      heroDesc.textContent = slide.desc;
+    }
+
+    // Initial load
+    showSlide(currentSlide);
+
+    // Change slide every 5 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  </script>
 </body>
 </html>
