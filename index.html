@@ -22,6 +22,37 @@
       color: inherit;
     }
 
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav h2 {
+      font-size: 1.3rem;
+      color: #ff4d6d;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff4d6d;
+    }
+
     /* Hero Section */
     .hero {
       background: url('https://source.unsplash.com/1600x700/?himachal,mountains') no-repeat center center/cover;
@@ -51,6 +82,7 @@
       font-size: 1.1rem;
       font-weight: bold;
       transition: 0.3s;
+      color: white;
     }
     .hero a:hover {
       background: #c0392b;
@@ -124,9 +156,27 @@
       border-radius: 5px;
       font-weight: bold;
       transition: 0.3s;
+      display: inline-block;
     }
     .package-card a:hover {
       background: #2980b9;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .contact p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+    .contact a {
+      color: #e74c3c;
+      font-weight: bold;
     }
 
     /* Footer */
@@ -140,9 +190,27 @@
     footer span {
       color: #e74c3c;
     }
+
+    /* Scroll Fix (to avoid hidden sections under navbar) */
+    .spacer {
+      height: 70px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>NoStopTraveller</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Spacer for Navbar -->
+  <div class="spacer" id="home"></div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -179,7 +247,7 @@
         <div>
           <h3>Shimla & Manali</h3>
           <p>6 Days / 7 Nights - ₹16,000 per person</p>
-          <a href="#">Book Now</a>
+          <a href="https://wa.me/918219575426?text=Hi%20I%20want%20to%20book%20Shimla%20%26%20Manali%20Package">Book Now</a>
         </div>
       </div>
       <div class="package-card">
@@ -187,7 +255,7 @@
         <div>
           <h3>Spiti Valley Adventure</h3>
           <p>8 Days / 9 Nights - ₹22,000 per person</p>
-          <a href="#">Book Now</a>
+          <a href="https://wa.me/918219575426?text=Hi%20I%20want%20to%20book%20Spiti%20Valley%20Package">Book Now</a>
         </div>
       </div>
       <div class="package-card">
@@ -195,9 +263,19 @@
         <div>
           <h3>Dharamshala & Dalhousie</h3>
           <p>5 Days / 6 Nights - ₹14,000 per person</p>
-          <a href="#">Book Now</a>
+          <a href="https://wa.me/918219575426?text=Hi%20I%20want%20to%20book%20Dharamshala%20%26%20Dalhousie%20Package">Book Now</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <p>📞 Phone: <a href="tel:+918219575426">+91 82195 75426</a></p>
+      <p>📧 Email: <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a></p>
+      <p>📍 Location: Shimla, Himachal Pradesh</p>
     </div>
   </section>
 
