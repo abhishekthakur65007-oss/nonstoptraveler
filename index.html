@@ -1,363 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NonStopTraveller - Explore Himachal</title>
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
-      color: #34495e;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      color: #e67e22;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      cursor: pointer;
-    }
-    a:hover {
-      color: #d35400;
-    }
-
-    /* Header */
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 2.8rem;
-      letter-spacing: 2px;
-    }
-
-    /* Navigation */
-    nav {
-      margin-top: 8px;
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    /* Instagram Link in Header */
-    .social-link {
-      margin-left: 15px;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    /* Packages Section */
-    #packages {
-      max-width: 1000px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
-    }
-
-    #packages h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      color: #2c3e50;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .package {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      overflow: hidden;
-      margin-bottom: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      transition: transform 0.3s ease;
-    }
-    .package:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-    }
-
-    .package img {
-      width: 350px;
-      height: 230px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .package-content {
-      padding: 20px 30px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .package-content h3 {
-      margin-top: 0;
-      font-size: 1.9rem;
-      color: #34495e;
-    }
-
-    .package-content p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      color: #555;
-      margin: 8px 0;
-    }
-
-    .price {
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #e67e22;
-      margin: 10px 0;
-    }
-
-    .btn-book {
-      align-self: flex-start;
-      background: #e67e22;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
-      transition: background 0.3s ease, transform 0.2s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .btn-book:hover {
-      background: #d35400;
-      transform: scale(1.05);
-    }
-
-    /* Booking Form Section */
-    #booking {
-      max-width: 600px;
-      margin: 50px auto 80px;
-      padding: 0 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    #booking h2 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    #booking form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    #booking label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #34495e;
-    }
-
-    #booking input, #booking select, #booking textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: inherit;
-      resize: vertical;
-    }
-
-    #booking button {
-      background: #e67e22;
-      color: white;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
-      transition: background 0.3s ease;
-      width: 100%;
-    }
-
-    #booking button:hover {
-      background: #d35400;
-    }
-
-    /* Footer */
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
-    footer a {
-      color: #e67e22;
-      font-weight: 700;
-    }
-
-    /* Responsive */
-    @media (max-width: 800px) {
-      .package {
-        flex-direction: column;
-        align-items: center;
-      }
-      .package img {
-        width: 100%;
-        height: 200px;
-      }
-      .package-content {
-        padding: 15px 20px;
-        text-align: center;
-      }
-      .btn-book {
-        align-self: center;
-      }
-      nav {
-        margin-top: 12px;
-      }
-      nav a {
-        display: inline-block;
-        margin: 10px 10px;
-      }
-      .social-link {
-        display: block;
-        margin: 10px 0 0;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoStopTraveller | Explore Himachal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header>
-  <h1>NonStopTraveller</h1>
-  <nav>
-    <a href="#packages">Packages</a>
-    <a href="#booking">Book Now</a>
-    <a href="mailto:abhishekthakur65007@gmail.com">Contact</a>
-    <a class="social-link" href="https://instagram.com/nonstoptraveler7" target="_blank" rel="noopener noreferrer">Instagram @nonstoptraveler7</a>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">NoStopTraveller</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <section id="packages">
-    <h2>Our Travel Packages</h2>
-    
-    <div class="package">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="Shimla Manali">
-      <div class="package-content">
-        <h3>Shimla - Manali Package</h3>
-        <p>6 Days / 7 Nights</p>
-        <p class="price">₹16,000 per person</p>
-        <p>Pickup & Drop from Chandigarh Airport / Railway Station / Bus Stand</p>
-        <p>Explore Shimla and Manali with comfortable stays and guided tours.</p>
-        <a href="#booking" class="btn-book" data-package="Shimla - Manali Package">Book Now</a>
-      </div>
-    </div>
-    
-    <div class="package">
-      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=60" alt="Lahaul Spiti">
-      <div class="package-content">
-        <h3>Lahaul - Spiti Package</h3>
-        <p>7 Days / 8 Nights</p>
-        <p class="price">₹24,000 per person</p>
-        <p>Pickup & Drop from Chandigarh Airport / Railway Station / Bus Stand</p>
-        <p>Experience the breathtaking landscapes and culture of Lahaul and Spiti valley.</p>
-        <a href="#booking" class="btn-book" data-package="Lahaul - Spiti Package">Book Now</a>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Discover the Hidden Gems of Himachal</h1>
+    <p>Your journey starts here. Travel, Explore & Experience.</p>
+    <a href="packages.html" class="btn">Explore Packages</a>
+  </section>
+
+  <!-- Highlights -->
+  <section class="highlights">
+    <h2>Why Travel With Us?</h2>
+    <div class="cards">
+      <div class="card">🏔️ Local Expertise</div>
+      <div class="card">🚐 Comfortable Travel</div>
+      <div class="card">📸 Unique Experiences</div>
+      <div class="card">💰 Affordable Packages</div>
     </div>
   </section>
 
-  <section id="booking">
-    <h2>Book Your Trip</h2>
-
-    <form action="https://formsubmit.co/abhishekthakur65007@gmail.com" method="POST">
-      <!-- To prevent spam -->
-      <input type="hidden" name="_captcha" value="false">
-
-      <label for="name">Full Name *</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone Number *</label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <label for="package">Select Package *</label>
-      <select id="package" name="package" required>
-        <option value="" disabled selected>Choose your package</option>
-        <option value="Shimla - Manali Package">Shimla - Manali Package (₹16,000)</option>
-        <option value="Lahaul - Spiti Package">Lahaul - Spiti Package (₹24,000)</option>
-      </select>
-
-      <label for="message">Additional Details / Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Any specific requirements?"></textarea>
-
-      <button type="submit">Submit Booking</button>
-    </form>
-  </section>
-</main>
-
-<footer>
-  <p>Contact us: <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a> | Call/WhatsApp: 8219575426</p>
-  <p>&copy; 2025 NonStopTraveller. All rights reserved.</p>
-</footer>
-
-<script>
-  // Wait until DOM is loaded
-  document.addEventListener('DOMContentLoaded', function () {
-    // Select all Book Now buttons
-    const buttons = document.querySelectorAll('.btn-book');
-    const packageSelect = document.getElementById('package');
-    
-    buttons.forEach(button => {
-      button.addEventListener('click', function(event) {
-        event.preventDefault(); // prevent default anchor jump
-
-        // Get the package name from data-package attribute
-        const selectedPackage = this.getAttribute('data-package');
-        
-        // Set the select value
-        if (packageSelect && selectedPackage) {
-          packageSelect.value = selectedPackage;
-        }
-        
-        // Scroll to booking form smoothly
-        const bookingSection = document.getElementById('booking');
-        if (bookingSection) {
-          bookingSection.scrollIntoView({ behavior: 'smooth' });
-          // Focus on name input field for better UX
-          const nameInput = bookingSection.querySelector('input[name="name"]');
-          if (nameInput) {
-            nameInput.focus();
-          }
-        }
-      });
-    });
-  });
-</script>
-
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 NoStopTraveller | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
