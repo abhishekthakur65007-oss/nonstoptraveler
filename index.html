@@ -7,222 +7,159 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      margin: 0; padding: 0;
+      background: #f5f5f5;
     }
-
     header {
-      background: #0077b6;
-      color: #fff;
-      padding: 20px;
+      background: #2c3e50;
+      color: white;
       text-align: center;
+      padding: 20px;
     }
-
     header h1 {
       margin: 0;
+      font-size: 2rem;
     }
-
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
     section {
-      padding: 40px 20px;
+      padding: 40px;
       text-align: center;
     }
-
-    h2 {
-      color: #023e8a;
-      margin-bottom: 20px;
-    }
-
-    .features {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .feature {
+    .booking-section {
       background: white;
-      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1;
-      max-width: 300px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
     }
-
-    .packages {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .package {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex: 1;
-      max-width: 300px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #0077b6;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #023e8a;
-    }
-
-    .contact {
-      background: #e6f2ff;
-      padding: 40px 20px;
-      border-radius: 10px;
-    }
-
-    .contact-details {
+    .booking-section h2 {
       margin-bottom: 20px;
+      color: #2c3e50;
     }
-
-    .booking-form {
-      max-width: 400px;
-      margin: 0 auto;
+    form {
+      display: flex;
+      flex-direction: column;
       text-align: left;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
-    .booking-form label {
-      display: block;
+    label {
       margin-top: 10px;
       font-weight: bold;
     }
-
-    .booking-form input,
-    .booking-form select {
-      width: 100%;
-      padding: 8px;
+    input, select, textarea {
       margin-top: 5px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-    }
-
-    .booking-form button {
-      margin-top: 15px;
       width: 100%;
-      padding: 10px;
-      background: #0077b6;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #e67e22;
       color: white;
+      font-size: 16px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-
-    .booking-form button:hover {
-      background: #023e8a;
+    button:hover {
+      background: #d35400;
     }
-
     footer {
-      background: #333;
+      background: #2c3e50;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 20px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1>NoStopTraveller</h1>
-    <p>Explore Himachal Pradesh with us – unforgettable journeys await!</p>
+    <p>Explore Himachal like never before 🚐🏔️</p>
+    <nav>
+      <a href="#booking">Book Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Features Section -->
   <section>
-    <h2>Why Travel With Us?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>🌄 Handpicked Destinations</h3>
-        <p>From Shimla’s charm to Spiti’s adventure, our tours cover the best of Himachal.</p>
-      </div>
-      <div class="feature">
-        <h3>💰 Affordable Packages</h3>
-        <p>Experience luxury and adventure at prices that suit every traveler.</p>
-      </div>
-      <div class="feature">
-        <h3>📞 24x7 Support</h3>
-        <p>We’re always just a call away to make your journey hassle-free.</p>
-      </div>
-    </div>
+    <h2>Welcome to Himachal Tours</h2>
+    <p>Shimla • Manali • Spiti • Dharamshala • Dalhousie • Kinnaur • Chamba</p>
+    <p>Packages starting at just <b>₹16,000 per person (6N/7D)</b></p>
   </section>
 
-  <!-- Packages Section -->
-  <section>
-    <h2>Popular Packages</h2>
-    <div class="packages">
-      <div class="package">
-        <h3>Shimla & Manali</h3>
-        <p>6 Days / 7 Nights - ₹16,000 per person</p>
-        <a href="#contact" class="btn">Book Now</a>
-      </div>
-      <div class="package">
-        <h3>Spiti Valley Adventure</h3>
-        <p>8 Days / 9 Nights - ₹22,000 per person</p>
-        <a href="#contact" class="btn">Book Now</a>
-      </div>
-      <div class="package">
-        <h3>Dharamshala & Dalhousie</h3>
-        <p>5 Days / 6 Nights - ₹14,000 per person</p>
-        <a href="#contact" class="btn">Book Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Booking Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>We’re here to help you plan your dream trip to Himachal Pradesh. Reach out anytime!</p>
+  <!-- Booking Section -->
+  <section id="booking" class="booking-section">
+    <h2>Book Your Trip</h2>
     
-    <div class="contact-details">
-      <p><strong>📞 Phone:</strong> <a href="tel:+918219575426">+91 82195 75426</a></p>
-      <p><strong>📧 Email:</strong> <a href="mailto:abhishekthakur65007@gmail.com">abhishekthakur65007@gmail.com</a></p>
-      <p><strong>📍 Address:</strong> Gian Chand House, near Key Man House, Jakhoo Road, Shimla</p>
-    </div>
-
-    <h3>Booking Form</h3>
-    <form class="booking-form">
+    <form id="bookingForm" action="https://formspree.io/f/mjkebzyq" method="POST">
+      
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="_replyto" required>
 
       <label for="package">Select Package:</label>
       <select id="package" name="package" required>
         <option value="shimla-manali">Shimla & Manali</option>
         <option value="spiti">Spiti Valley Adventure</option>
         <option value="dharamshala">Dharamshala & Dalhousie</option>
+        <option value="kinnaur">Kinnaur & Chamba</option>
       </select>
+
+      <label for="message">Additional Message:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
 
       <button type="submit">Submit Booking</button>
     </form>
+
+    <div id="thankyouMsg" style="display:none; color:green; margin-top:15px; font-weight:bold;">
+      ✅ Thank you! Your booking has been submitted. We will contact you soon.
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: <b>+91 8219575426</b></p>
+    <p>📧 Email: <b>abhishekthakur65007@gmail.com</b></p>
+    <p>🌍 Shimla, Himachal Pradesh</p>
+  </section>
+
   <footer>
-    <p>© 2025 NoStopTraveller | Designed with ❤️ in Himachal</p>
+    <p>© 2025 NoStopTraveller. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Custom success message (no redirect)
+    const form = document.getElementById("bookingForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.style.display = "none";
+        document.getElementById("thankyouMsg").style.display = "block";
+      }
+    });
+  </script>
 
 </body>
 </html>
