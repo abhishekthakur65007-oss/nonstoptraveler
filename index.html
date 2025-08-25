@@ -1,191 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NoStopTraveller | Explore Himachal</title>
-
-  <!-- Your main stylesheet (keeps existing styles) -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- HERO and slider styles (placed after main css to override if needed) -->
-  <style>
-    /* basic page resets for this file */
-    :root { --accent:#ff6600; --nav-bg:#252525; --max-width:1200px; }
-    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; }
-
-    /* NAVBAR */
-    .navbar {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 20px; background:var(--nav-bg); color:#fff; position:sticky; top:0; z-index:60;
-    }
-    .navbar .logo { font-weight:700; color:#fff; }
-    .nav-links { list-style:none; display:flex; gap:18px; margin:0; padding:0; }
-    .nav-links a { color:#fff; text-decoration:none; font-weight:600; padding:6px 8px; border-radius:6px; }
-    .nav-links a.active { background: rgba(255,255,255,0.06); }
-
-    /* HERO / SLIDER */
-    .hero { position:relative; min-height:72vh; overflow:hidden; display:block; }
-    .slides { position:relative; height:100%; }
-    .slide {
-      position:absolute; inset:0;
-      background-size:cover; background-position:center;
-      opacity:0; transform:scale(1.02); transition:opacity .6s ease, transform .6s ease;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .slide.active { opacity:1; transform:scale(1); z-index:2; }
-
-    /* overlay to darken image for readability */
-    .slide::before {
-      content:""; position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(6,20,36,0.35), rgba(6,20,36,0.4));
-      z-index:1;
-    }
-
-    /* text container */
-    .hero-text {
-      position:relative; z-index:3; width:100%; max-width:var(--max-width);
-      padding: 12px 20px; text-align:center; color: #fff;
-    }
-    .hero-title { font-size: clamp(2.2rem, 9vw, 6rem); margin:0 0 6px; line-height:1; font-weight:800; }
-    .hero-subtitle { font-size: clamp(1.0rem, 2.6vw, 1.8rem); margin:6px 0; font-weight:600; opacity:0.95; }
-    .hero-lead { font-size: clamp(.9rem, 2.2vw, 1.15rem); margin:10px 0 18px; opacity:0.95; max-width:900px; margin-left:auto; margin-right:auto; }
-
-    .btn-hero {
-      display:inline-block; padding:12px 26px; background:var(--accent); color:#fff;
-      text-decoration:none; border-radius:8px; font-weight:700; box-shadow:0 8px 22px rgba(20,20,20,0.25);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-    .btn-hero:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(20,20,20,0.30); }
-
-    /* nav controls */
-    .hero-controls { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); z-index:4; display:flex; gap:8px; }
-    .dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.35); cursor:pointer; box-shadow:0 3px 8px rgba(0,0,0,0.2); }
-    .dot.active { background:#fff; }
-
-    .hero-arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:5; background:rgba(0,0,0,0.35); border:none; color:#fff; padding:10px 12px; border-radius:8px; cursor:pointer; }
-    .hero-arrow.prev { left:14px; }
-    .hero-arrow.next { right:14px; }
-
-    /* Highlights section */
-    .highlights { padding:48px 18px; background:#fff; text-align:center; }
-    .cards { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:18px; }
-    .card { background:#f6f6f7; padding:18px 20px; border-radius:12px; min-width:180px; box-shadow:0 4px 14px rgba(10,10,10,0.03); }
-
-    footer { background:#222; color:#ddd; padding:14px 18px; text-align:center; }
-    @media (max-width:520px) {
-      .hero { min-height:60vh; }
-      .hero-lead { font-size: .95rem; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoStopTraveller - Himachal Tours</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <header>
-    <nav class="navbar" role="navigation" aria-label="Main">
-      <div class="logo">NoStopTraveller</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="packages.html">Packages</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO / SLIDER (3 slides) -->
   <!-- Hero Section -->
-<section class="hero">
-  <img src="shimla.jpg" alt="Shimla" class="hero-bg">
-
-  <div class="hero-text">
-    <h1>Shimla</h1>
-    <h3>Colonial charm & pine forests</h3>
-    <p>Your journey starts here. Travel, Explore & Experience</p>
-    <a href="packages.html" class="btn">Explore Packages</a>
-  </div>
-</section>
-
-
-      <div class="slide" style="background-image:url('assets/images/manali.jpg');" data-title="Manali" data-sub="Snow peaks & adventure sports" data-lead="Trekking, paragliding and beautiful valleys await.">
-        <div class="hero-text">
-          <h1 class="hero-title">Manali</h1>
-          <h3 class="hero-subtitle">Snow peaks & adventure sports</h3>
-          <p class="hero-lead">Trekking, paragliding and beautiful valleys await.</p>
-          <a class="btn-hero" href="packages.html">Explore Packages</a>
-        </div>
-      </div>
-
-      <div class="slide" style="background-image:url('assets/images/spiti.jpg');" data-title="Spiti Valley" data-sub="Cold desert & monasteries" data-lead="High passes, remote monasteries and raw landscapes.">
-        <div class="hero-text">
-          <h1 class="hero-title">Spiti Valley</h1>
-          <h3 class="hero-subtitle">Cold desert & monasteries</h3>
-          <p class="hero-lead">High passes, remote monasteries and raw landscapes.</p>
-          <a class="btn-hero" href="packages.html">Explore Packages</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- arrows -->
-    <button class="hero-arrow prev" aria-label="Previous slide">‹</button>
-    <button class="hero-arrow next" aria-label="Next slide">›</button>
-
-    <!-- dots -->
-    <div class="hero-controls" role="tablist" aria-label="Slide indicators">
-      <div class="dot active" data-index="0" role="tab"></div>
-      <div class="dot" data-index="1" role="tab"></div>
-      <div class="dot" data-index="2" role="tab"></div>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Discover Himachal</h1>
+      <h3>Snow peaks • Pine forests • Colonial charm</h3>
+      <p>Your journey starts here. Explore the magic of Himachal Pradesh with us.</p>
+      <a href="packages.html" class="btn">Explore Packages</a>
     </div>
   </section>
 
-  <!-- HIGHLIGHTS -->
-  <section class="highlights" aria-label="Why travel with us">
-    <h2 style="margin:0 0 12px;">Why Travel With Us?</h2>
-    <div class="cards">
-      <div class="card">🏔️ Local Expertise</div>
-      <div class="card">🚐 Comfortable Travel</div>
-      <div class="card">📸 Unique Experiences</div>
-      <div class="card">💰 Affordable Packages</div>
+  <!-- Highlights Section -->
+  <section class="highlights">
+    <h2>Why Travel With Us?</h2>
+    <div class="highlight-boxes">
+      <div class="box">
+        <h3>Handpicked Destinations</h3>
+        <p>From Shimla’s charm to Spiti’s adventure, our tours cover the best of Himachal.</p>
+      </div>
+      <div class="box">
+        <h3>Affordable Packages</h3>
+        <p>Experience luxury and adventure at prices that suit every traveler.</p>
+      </div>
+      <div class="box">
+        <h3>24x7 Support</h3>
+        <p>We’re always just a call away to make your journey hassle-free.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 NoStopTraveller | All Rights Reserved</p>
+    <p>&copy; 2025 NoStopTraveller | Designed with ❤️ in Himachal</p>
   </footer>
 
-  <!-- Slider JS (no dependencies) -->
-  <script>
-    (function(){
-      const slides = Array.from(document.querySelectorAll('.slide'));
-      const dots = Array.from(document.querySelectorAll('.dot'));
-      const prevBtn = document.querySelector('.hero-arrow.prev');
-      const nextBtn = document.querySelector('.hero-arrow.next');
-      let current = 0;
-      let timer = null;
-      function show(index){
-        slides.forEach((s,i)=> s.classList.toggle('active', i===index));
-        dots.forEach((d,i)=> d.classList.toggle('active', i===index));
-        current = index;
-      }
-      function next(){ show((current+1) % slides.length); }
-      function prev(){ show((current-1 + slides.length) % slides.length); }
-      // auto rotate
-      function startAuto(){ timer = setInterval(next, 5000); }
-      function stopAuto(){ if(timer){ clearInterval(timer); timer = null; } }
-      // events
-      nextBtn.addEventListener('click', ()=>{ stopAuto(); next(); startAuto(); });
-      prevBtn.addEventListener('click', ()=>{ stopAuto(); prev(); startAuto(); });
-      dots.forEach(d=> d.addEventListener('click', (e)=>{ stopAuto(); show(Number(d.dataset.index)); startAuto(); }));
-      // pause on hover (optional)
-      document.querySelector('.hero').addEventListener('mouseenter', stopAuto);
-      document.querySelector('.hero').addEventListener('mouseleave', startAuto);
-      // init
-      show(0);
-      startAuto();
-    })();
-  </script>
 </body>
 </html>
