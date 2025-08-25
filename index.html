@@ -5,129 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NoStopTraveller - Himachal Tours</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f5f5f5;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
     header {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      background: url('https://images.unsplash.com/photo-1602163057345-45c8bba7d52f?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white; text-align: center; padding: 100px 20px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
+    header h1 { font-size: 3rem; margin: 0; }
+    header p { font-size: 1.2rem; margin-top: 10px; }
+    nav { margin-top: 20px; }
     nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
+      background: rgba(0,0,0,0.6);
+      color: white; padding: 10px 20px; margin: 5px;
+      border-radius: 5px; text-decoration: none;
     }
-    section {
-      padding: 40px;
-      text-align: center;
+    nav a:hover { background: #e67e22; }
+
+    section { padding: 50px 20px; text-align: center; }
+    .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+    .package {
+      background: white; border-radius: 10px; padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     }
+    .package img { width: 100%; border-radius: 10px; }
+    .package h3 { margin: 15px 0 10px; }
+    .package p { color: #555; }
+
     .booking-section {
-      background: white;
-      max-width: 500px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
+      background: white; max-width: 500px; margin: auto;
+      padding: 30px; border-radius: 10px;
       box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
     }
-    .booking-section h2 {
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-    label {
-      margin-top: 10px;
-      font-weight: bold;
-    }
+    form { display: flex; flex-direction: column; text-align: left; }
+    label { margin-top: 10px; font-weight: bold; }
     input, select, textarea {
-      margin-top: 5px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
+      margin-top: 5px; padding: 10px; border: 1px solid #ccc;
+      border-radius: 5px; width: 100%;
     }
     button {
-      margin-top: 20px;
-      padding: 12px;
-      background: #e67e22;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      margin-top: 20px; padding: 12px; background: #e67e22;
+      color: white; font-size: 16px; border: none;
+      border-radius: 5px; cursor: pointer;
     }
-    button:hover {
-      background: #d35400;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
+    button:hover { background: #d35400; }
+
+    footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 30px; }
   </style>
 </head>
 <body>
 
+  <!-- Hero Banner -->
   <header>
     <h1>NoStopTraveller</h1>
     <p>Explore Himachal like never before 🚐🏔️</p>
     <nav>
+      <a href="#packages">Packages</a>
       <a href="#booking">Book Now</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section>
-    <h2>Welcome to Himachal Tours</h2>
-    <p>Shimla • Manali • Spiti • Dharamshala • Dalhousie • Kinnaur • Chamba</p>
-    <p>Packages starting at just <b>₹16,000 per person (6N/7D)</b></p>
+  <!-- Packages Section -->
+  <section id="packages">
+    <h2>Our Popular Packages</h2>
+    <div class="packages">
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Shimla & Manali">
+        <h3>Shimla & Manali</h3>
+        <p>6 Nights / 7 Days • ₹16,000 per person</p>
+      </div>
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" alt="Spiti Valley">
+        <h3>Spiti Valley</h3>
+        <p>7 Nights / 8 Days • ₹22,000 per person</p>
+      </div>
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1613745968858-8b9c91c7d1cf?auto=format&fit=crop&w=600&q=80" alt="Dharamshala">
+        <h3>Dharamshala & Dalhousie</h3>
+        <p>5 Nights / 6 Days • ₹14,500 per person</p>
+      </div>
+      <div class="package">
+        <img src="https://images.unsplash.com/photo-1621516449150-6ac054b022cb?auto=format&fit=crop&w=600&q=80" alt="Kinnaur">
+        <h3>Kinnaur & Chamba</h3>
+        <p>6 Nights / 7 Days • ₹18,500 per person</p>
+      </div>
+    </div>
   </section>
 
   <!-- Booking Section -->
-  <section id="booking" class="booking-section">
+  <section id="booking">
     <h2>Book Your Trip</h2>
-    
-    <form id="bookingForm" action="https://formspree.io/f/mjkebzyq" method="POST">
-      
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" required>
+    <div class="booking-section">
+      <form id="bookingForm" action="https://formspree.io/f/mjkebzyq" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="email">Your Email:</label>
-      <input type="email" id="email" name="_replyto" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="_replyto" required>
 
-      <label for="package">Select Package:</label>
-      <select id="package" name="package" required>
-        <option value="shimla-manali">Shimla & Manali</option>
-        <option value="spiti">Spiti Valley Adventure</option>
-        <option value="dharamshala">Dharamshala & Dalhousie</option>
-        <option value="kinnaur">Kinnaur & Chamba</option>
-      </select>
+        <label for="package">Select Package:</label>
+        <select id="package" name="package" required>
+          <option value="shimla-manali">Shimla & Manali</option>
+          <option value="spiti">Spiti Valley Adventure</option>
+          <option value="dharamshala">Dharamshala & Dalhousie</option>
+          <option value="kinnaur">Kinnaur & Chamba</option>
+        </select>
 
-      <label for="message">Additional Message:</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+        <label for="message">Additional Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
 
-      <button type="submit">Submit Booking</button>
-    </form>
-
-    <div id="thankyouMsg" style="display:none; color:green; margin-top:15px; font-weight:bold;">
-      ✅ Thank you! Your booking has been submitted. We will contact you soon.
+        <button type="submit">Submit Booking</button>
+      </form>
+      <div id="thankyouMsg" style="display:none; color:green; margin-top:15px; font-weight:bold;">
+        ✅ Thank you! Your booking has been submitted. We will contact you soon.
+      </div>
     </div>
   </section>
 
@@ -139,6 +129,7 @@
     <p>🌍 Shimla, Himachal Pradesh</p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 NoStopTraveller. All rights reserved.</p>
   </footer>
