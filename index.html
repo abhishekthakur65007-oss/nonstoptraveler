@@ -1,16 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NoStopTraveller | Explore Himachal</title>
+
+  <!-- Link your main stylesheet (keep this as is if you already have it) -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Small hero-specific CSS overrides (placed after the main CSS so it wins) -->
+  <style>
+    /* HERO */
+    .hero {
+      position: relative;
+      background-image: url('assets/images/shimla.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      overflow: hidden;
+    }
+
+    /* dark overlay to make text readable */
+    .hero::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(6,20,36,0.45), rgba(6,20,36,0.25));
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: relative;   /* above the overlay */
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      max-width: 1100px;
+      padding: 12px 18px;
+    }
+
+    /* responsive type sizing with clamp */
+    .hero-title {
+      font-size: clamp(2.4rem, 9vw, 6.4rem);
+      line-height: 1;
+      margin: 0 0 10px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.0rem, 2.8vw, 1.9rem);
+      margin: 10px 0;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+    .hero-lead {
+      font-size: clamp(.9rem, 2.2vw, 1.2rem);
+      margin: 10px 0 18px;
+      opacity: 0.95;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      padding: 12px 26px;
+      background: #ff6600;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 8px 22px rgba(20,20,20,0.25);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-hero:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(20,20,20,0.30); }
+
+    /* small-screen spacing */
+    @media (max-width: 520px) {
+      .hero { min-height: 60vh; padding: 30px 12px; }
+      .hero-subtitle { margin-top: 6px; }
+      .hero-title { margin-bottom: 6px; }
+    }
+
+    /* Basic navbar style (light override so it looks consistent) */
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 12px 20px;
+      background: #252525;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .navbar .logo { font-weight:700; color:#fff; }
+    .nav-links { list-style:none; display:flex; gap:18px; margin:0; padding:0; align-items:center; }
+    .nav-links a { color:#fff; text-decoration:none; font-weight:600; padding:6px 8px; }
+    .nav-links a.active { background: rgba(255,255,255,0.06); border-radius:6px; }
+
+    /* small layout for the highlights section */
+    .highlights{ padding: 48px 18px; text-align:center; background:#fff; }
+    .cards{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:18px; }
+    .card{ background:#f6f6f7; padding:18px 20px; border-radius:12px; min-width:180px; box-shadow: 0 4px 14px rgba(10,10,10,0.03); }
+    footer{ background:#222; color:#ddd; padding:14px 18px; text-align:center; }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <header>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="logo">NoStopTraveller</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -23,16 +124,19 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Discover the Hidden Gems of Himachal</h1>
-    <p>Your journey starts here. Travel, Explore & Experience.</p>
-    <a href="packages.html" class="btn">Explore Packages</a>
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero: Shimla">
+    <div class="hero-text">
+      <h1 class="hero-title">Shimla</h1>
+      <h3 class="hero-subtitle">Colonial charm & pine forests</h3>
+      <p class="hero-lead">Discover hidden gems of Himachal. Your journey starts here — Travel, Explore & Experience.</p>
+      <a class="btn-hero" href="packages.html">Explore Packages</a>
+    </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="highlights">
-    <h2>Why Travel With Us?</h2>
+  <!-- HIGHLIGHTS -->
+  <section class="highlights" aria-label="Why travel with us">
+    <h2 style="margin:0 0 12px;">Why Travel With Us?</h2>
     <div class="cards">
       <div class="card">🏔️ Local Expertise</div>
       <div class="card">🚐 Comfortable Travel</div>
@@ -41,9 +145,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 NoStopTraveller | All Rights Reserved</p>
   </footer>
+
 </body>
 </html>
