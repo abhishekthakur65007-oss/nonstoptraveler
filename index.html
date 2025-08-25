@@ -3,139 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NoStopTraveller - Himachal Tours</title>
+  <title>NoStopTraveller</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
     header {
-      background: url('https://images.unsplash.com/photo-1602163057345-45c8bba7d52f?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: white; text-align: center; padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
     }
-    header h1 { font-size: 3rem; margin: 0; }
-    header p { font-size: 1.2rem; margin-top: 10px; }
-    nav { margin-top: 20px; }
-    nav a {
-      background: rgba(0,0,0,0.6);
-      color: white; padding: 10px 20px; margin: 5px;
-      border-radius: 5px; text-decoration: none;
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
-    nav a:hover { background: #e67e22; }
-
-    section { padding: 50px 20px; text-align: center; }
-    .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-    .package {
-      background: white; border-radius: 10px; padding: 20px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    header p {
+      font-size: 1.3rem;
     }
-    .package img { width: 100%; border-radius: 10px; }
-    .package h3 { margin: 15px 0 10px; }
-    .package p { color: #555; }
-
+    .packages {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .packages h2 {
+      margin-bottom: 20px;
+    }
+    .package-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px 0;
+    }
+    .card p {
+      padding: 0 10px 20px;
+    }
     .booking-section {
-      background: white; max-width: 500px; margin: auto;
-      padding: 30px; border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
     }
-    form { display: flex; flex-direction: column; text-align: left; }
-    label { margin-top: 10px; font-weight: bold; }
-    input, select, textarea {
-      margin-top: 5px; padding: 10px; border: 1px solid #ccc;
-      border-radius: 5px; width: 100%;
+    form {
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
     }
-    button {
-      margin-top: 20px; padding: 12px; background: #e67e22;
-      color: white; font-size: 16px; border: none;
-      border-radius: 5px; cursor: pointer;
+    form label {
+      display: block;
+      margin-top: 10px;
     }
-    button:hover { background: #d35400; }
-
-    footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 30px; }
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #28a745;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #218838;
+    }
+    #thankyouMsg {
+      display: none;
+      color: green;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Hero Banner -->
+  <!-- Header -->
   <header>
     <h1>NoStopTraveller</h1>
-    <p>Explore Himachal like never before 🚐🏔️</p>
-    <nav>
-      <a href="#packages">Packages</a>
-      <a href="#booking">Book Now</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>A Pahadi Path – Explore Shimla, Manali & Beyond</p>
   </header>
 
-  <!-- Packages Section -->
-  <section id="packages">
-    <h2>Our Popular Packages</h2>
-    <div class="packages">
-      <div class="package">
-        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Shimla & Manali">
+  <!-- Packages -->
+  <section class="packages">
+    <h2>Our Travel Packages</h2>
+    <div class="package-list">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1612444530666-fb8d1d3b5c2e" alt="Shimla & Manali">
         <h3>Shimla & Manali</h3>
-        <p>6 Nights / 7 Days • ₹16,000 per person</p>
+        <p>6 Days / 7 Nights @ ₹16,000 per person.<br>Pickup & drop from Chandigarh.</p>
       </div>
-      <div class="package">
-        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" alt="Spiti Valley">
-        <h3>Spiti Valley</h3>
-        <p>7 Nights / 8 Days • ₹22,000 per person</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1602161288940-3a19e58c7adf" alt="Spiti Valley">
+        <h3>Spiti Valley Adventure</h3>
+        <p>Explore high-altitude deserts, monasteries & more.</p>
       </div>
-      <div class="package">
-        <img src="https://images.unsplash.com/photo-1613745968858-8b9c91c7d1cf?auto=format&fit=crop&w=600&q=80" alt="Dharamshala">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1626337742461-df25c02d0bb2" alt="Dharamshala">
         <h3>Dharamshala & Dalhousie</h3>
-        <p>5 Nights / 6 Days • ₹14,500 per person</p>
+        <p>Peaceful monasteries and colonial charm.</p>
       </div>
-      <div class="package">
-        <img src="https://images.unsplash.com/photo-1621516449150-6ac054b022cb?auto=format&fit=crop&w=600&q=80" alt="Kinnaur">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1617196030526-56dfb5c7a7b2" alt="Kinnaur & Chamba">
         <h3>Kinnaur & Chamba</h3>
-        <p>6 Nights / 7 Days • ₹18,500 per person</p>
+        <p>Hidden gems of Himachal Pradesh.</p>
       </div>
     </div>
   </section>
 
   <!-- Booking Section -->
-  <section id="booking">
+  <section id="booking" class="booking-section">
     <h2>Book Your Trip</h2>
-    <div class="booking-section">
-      <form id="bookingForm" action="https://formspree.io/f/mjkebzyq" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
+    
+    <form id="bookingForm" action="https://formspree.io/f/mjkebzyq" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
 
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="_replyto" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="_replyto" required>
 
-        <label for="package">Select Package:</label>
-        <select id="package" name="package" required>
-          <option value="shimla-manali">Shimla & Manali</option>
-          <option value="spiti">Spiti Valley Adventure</option>
-          <option value="dharamshala">Dharamshala & Dalhousie</option>
-          <option value="kinnaur">Kinnaur & Chamba</option>
-        </select>
+      <label for="package">Select Package:</label>
+      <select id="package" name="package" required>
+        <option value="shimla-manali">Shimla & Manali</option>
+        <option value="spiti">Spiti Valley Adventure</option>
+        <option value="dharamshala">Dharamshala & Dalhousie</option>
+        <option value="kinnaur">Kinnaur & Chamba</option>
+      </select>
 
-        <label for="message">Additional Message:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+      <label for="message">Additional Message:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
 
-        <button type="submit">Submit Booking</button>
-      </form>
-      <div id="thankyouMsg" style="display:none; color:green; margin-top:15px; font-weight:bold;">
-        ✅ Thank you! Your booking has been submitted. We will contact you soon.
-      </div>
-    </div>
+      <button type="submit">Submit Booking</button>
+    </form>
+
+    <div id="thankyouMsg">✅ Thank you! Your booking has been submitted.</div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: <b>+91 8219575426</b></p>
-    <p>📧 Email: <b>abhishekthakur65007@gmail.com</b></p>
-    <p>🌍 Shimla, Himachal Pradesh</p>
-  </section>
-
-  <!-- Footer -->
+  <!-- Contact -->
   <footer>
+    <p>📞 Phone: 8219575426 | 📧 Email: abhishekthakur65007@gmail.com</p>
     <p>© 2025 NoStopTraveller. All rights reserved.</p>
   </footer>
 
+  <!-- Script for thank you message -->
   <script>
-    // Custom success message (no redirect)
     const form = document.getElementById("bookingForm");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
