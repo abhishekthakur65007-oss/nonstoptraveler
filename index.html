@@ -3,91 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NoStopTraveller - Himachal Tours</title>
-  <link rel="stylesheet" href="style.css">
+  <title>NoStopTraveller - Discover Himachal</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+                  url('https://source.unsplash.com/1600x900/?himachal,travel') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #ff5722;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #e64a19;
+    }
+
+    /* Why Us Section */
+    .features {
+      padding: 50px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .features h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .features .box {
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .features h3 {
+      margin-bottom: 10px;
+      color: #ff5722;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    footer span {
+      color: red;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-      <h1 id="hero-title">Discover Himachal</h1>
-      <h3 id="hero-subtitle">Snow peaks • Pine forests • Colonial charm</h3>
-      <p id="hero-desc">Your journey starts here. Explore the magic of Himachal Pradesh with us.</p>
-      <a href="packages.html" class="btn">Explore Packages</a>
-    </div>
+    <h1>Discover Himachal</h1>
+    <p>Snow peaks • Pine forests • Colonial charm</p>
+    <a href="#packages" class="btn">Explore Packages</a>
   </section>
 
-  <!-- Highlights Section -->
-  <section class="highlights">
+  <!-- Why Us -->
+  <section class="features" id="packages">
     <h2>Why Travel With Us?</h2>
-    <div class="highlight-boxes">
-      <div class="box">
-        <h3>Handpicked Destinations</h3>
-        <p>From Shimla’s charm to Spiti’s adventure, our tours cover the best of Himachal.</p>
-      </div>
-      <div class="box">
-        <h3>Affordable Packages</h3>
-        <p>Experience luxury and adventure at prices that suit every traveler.</p>
-      </div>
-      <div class="box">
-        <h3>24x7 Support</h3>
-        <p>We’re always just a call away to make your journey hassle-free.</p>
-      </div>
+
+    <div class="box">
+      <h3>🏞 Handpicked Destinations</h3>
+      <p>From Shimla’s charm to Spiti’s adventure, our tours cover the best of Himachal.</p>
+    </div>
+
+    <div class="box">
+      <h3>💰 Affordable Packages</h3>
+      <p>Experience luxury and adventure at prices that suit every traveler.</p>
+    </div>
+
+    <div class="box">
+      <h3>📞 24x7 Support</h3>
+      <p>We’re always just a call away to make your journey hassle-free.</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 NoStopTraveller | Designed with ❤️ in Himachal</p>
+    <p>© 2025 NoStopTraveller | Designed with <span>❤</span> in Himachal</p>
   </footer>
 
-  <!-- Slideshow Script -->
-  <script>
-    const slides = [
-      {
-        image: "shimla.jpg",
-        title: "Shimla",
-        subtitle: "Colonial charm • Mall Road • Pine forests",
-        desc: "Walk the streets of the Queen of Hills and experience heritage mixed with nature."
-      },
-      {
-        image: "manali.jpg",
-        title: "Manali",
-        subtitle: "Snow peaks • Solang Valley • Beas River",
-        desc: "Adventure and peace in the lap of the Himalayas."
-      },
-      {
-        image: "spiti.jpg",
-        title: "Spiti Valley",
-        subtitle: "Cold desert • Monasteries • High passes",
-        desc: "A journey to the land of lamas, rugged terrains, and starlit skies."
-      }
-    ];
-
-    let currentSlide = 0;
-    const hero = document.querySelector(".hero");
-    const heroTitle = document.getElementById("hero-title");
-    const heroSubtitle = document.getElementById("hero-subtitle");
-    const heroDesc = document.getElementById("hero-desc");
-
-    function showSlide(index) {
-      const slide = slides[index];
-      hero.style.backgroundImage = `url(${slide.image})`;
-      heroTitle.textContent = slide.title;
-      heroSubtitle.textContent = slide.subtitle;
-      heroDesc.textContent = slide.desc;
-    }
-
-    // Initial load
-    showSlide(currentSlide);
-
-    // Change slide every 5 seconds
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 5000);
-  </script>
 </body>
 </html>
